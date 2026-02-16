@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JSON to CSV Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>JSON to CSV Converter</h1>
+    <p class="description">Sube un archivo JSON con un array de objetos</p>
+    
+    <div class="upload-area" id="uploadArea">
+      <svg class="upload-icon" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+        <polyline points="17 8 12 3 7 8"></polyline>
+        <line x1="12" y1="3" x2="12" y2="15"></line>
+      </svg>
+      <p class="upload-text">Arrastra tu archivo JSON aquí o haz clic para seleccionar</p>
+      <input type="file" id="fileInput" accept=".json" hidden>
+    </div>
+
+    <div class="file-info" id="fileInfo" style="display: none;">
+      <p><strong>Archivo:</strong> <span id="fileName"></span></p>
+      <p><strong>Registros:</strong> <span id="recordCount"></span></p>
+    </div>
+
+    <div class="options">
+      <label>
+        <input type="text" id="csvFileName" placeholder="nombre-archivo.csv">
+        <span class="label-text">Nombre del archivo CSV</span>
+      </label>
+    </div>
+
+    <button id="convertBtn" class="btn-convert" disabled>Convertir a CSV</button>
+
+    <div class="status" id="status"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
