@@ -25,8 +25,13 @@ uploadArea.addEventListener('dragleave', () => {
   uploadArea.classList.remove('dragover');
 });
 
+// Prevenir comportamiento por defecto en toda la ventana
+window.addEventListener('dragover', (e) => e.preventDefault());
+window.addEventListener('drop', (e) => e.preventDefault());
+
 uploadArea.addEventListener('drop', (e) => {
   e.preventDefault();
+  e.stopPropagation(); // Evitar que suba al window
   uploadArea.classList.remove('dragover');
   
   const files = e.dataTransfer.files;
